@@ -8,3 +8,23 @@
 #formGroupExampleInput{
     width: 600px
 }
+.parent{
+
+ height: 800px;
+}
+
+.left{
+    
+    height: 600px;
+
+}
+
+.right{
+    
+    height: 600px;
+
+}
+
+.logo{
+    margin-top: 50px;
+}

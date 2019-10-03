@@ -1,5 +1,7 @@
-.footer {
-    position: fixed;
+.b-align{
+    margin-left: 170px;
+}
+.sidelinks {
+    display: block;
     width: 100%;
-    bottom: 0;
 }

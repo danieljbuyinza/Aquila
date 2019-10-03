@@ -1,78 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tax Master</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="./fontawesome/css/all.css">
-    <link rel="stylesheet" href="./taxpayer.css">
-   
-</head>
-<body>
-      
-    <div class="pt-4 px-5">
-        <div class="row">
-          <div class="col-sm-3">
-            <ul class="list-group">
-                <li class="list-group-item"><a href="taxpayer.html" class="sidelinks">New Form</a></li>
-                <li class="list-group-item"><a href="saved.html" class="sidelinks">Saved Forms</a></li>
-                <li class="list-group-item"><a href="notifications.html" class="sidelinks">Notifications</a></li>
-              </ul>
-          </div>
-          <div class="col-sm-9">
-              <h2>Hello Paradiso!</h2>
-              <h4 align="center"> Tax Liability</h4>
-              <div align="right">
-              <label class="px-5">Date:</label><input type="date">-<input type="date"></div>
-              <form class="pt-10 userform">
-                    <div class="form-group row">
-                      <label for="staticEmail" class="col-sm-2 col-form-label">Amount</label>
-                      <div class="col-sm-4">
-                        <input type="text"  class="form-control" id="numbers" placeholder="figures">
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                            <label for="staticEmail" class="col-sm-2 col-form-label">Period</label>
-                            <div class="col-sm-4">
-                              <input type="text"  class="form-control" id="numbers" placeholder="No. of months">
-                            </div>
-                          </div>
-                          
-                                  <div class="form-group row">
-                                        <label for="staticEmail" class="col-sm-2 col-form-label" placeholder="select">Submitted Returns (UP)</label>
-                                        <div class="col-sm-4">
-                                                <select class="custom-select" id="inputGroupSelect01">
-                                                        <option value="1">YES</option>
-                                                        <option value="2">NO</option>
-                                                      </select>
-                                                             </div>
-                                      </div>
-                    <div class="form-group row">
-                      <label for="inputPassword" class="col-sm-2 col-form-label" placeholder="select">Unsubmitted Returns (UP)</label>
-                      <div class="col-sm-4">
-                            <select class="custom-select" id="inputGroupSelect01">
-                                    <option value="1">YES</option>
-                                    <option value="2">NO</option>
-                                  </select>
-                                         </div>
-            
-                          
-                                         
-                      </div> <p align="left">(UP-Unpaid)</p>
-                      <button type="submit" class="btn btn-primary b-align">Submit</button>
 
-                    
-                         </div> 
-                    
-                                        
-                  </form>           
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tax Master</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="./fontawesome/css/all.css">
+  <link rel="stylesheet" href="./taxpayer.css">
+
+</head>
+
+<body>
+  <div w3-include-html="./includes/navbar.html"></div>
+  <script>
+    function includeHTML() {
+      var z, i, elmnt, file, xhttp;
+      /* Loop through a collection of all HTML elements: */
+      z = document.getElementsByTagName("*");
+      for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        /*search for elements with a certain atrribute:*/
+        file = elmnt.getAttribute("w3-include-html");
+        if (file) {
+          /* Make an HTTP request using the attribute value as the file name: */
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4) {
+              if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+              if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+              /* Remove the attribute, and call this function once more: */
+              elmnt.removeAttribute("w3-include-html");
+              includeHTML();
+            }
+          }
+          xhttp.open("GET", file, true);
+          xhttp.send();
+          /* Exit the function: */
+          return;
+        }
+      }
+    }
+  </script>
+
+  <div class="pt-4 px-5">
+    <div class="row">
+      <div class="col-sm-3">
+        <ul class="list-group">
+          <li class="list-group-item"><a href="taxpayer.html" class="sidelinks">New Form</a></li>
+          <li class="list-group-item"><a href="saved.html" class="sidelinks">Saved Forms</a></li>
+          <li class="list-group-item"><a href="notifications.html" class="sidelinks">Notifications</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-9">
+        <h2>Hello Paradiso!</h2>
+        <h4 align="center"> Tax Liability</h4>
+        <div align="right">
+          <label class="px-5">Date:</label><input type="date">-<input type="date"></div>
+        <form class="pt-10 userform">
+          <div class="form-group row">
+            <label for="staticEmail" class="col-sm-2 col-form-label">Amount</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="numbers" placeholder="figures">
             </div>
-          
-          
-        </div>
-      </div> 
-      
+          </div>
+          <div class="form-group row">
+            <label for="staticEmail" class="col-sm-2 col-form-label">Period</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="numbers" placeholder="No. of months">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="staticEmail" class="col-sm-2 col-form-label" placeholder="select">Submitted Returns (UP)</label>
+            <div class="col-sm-4">
+              <select class="custom-select" id="inputGroupSelect01">
+                <option value="1">YES</option>
+                <option value="2">NO</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputPassword" class="col-sm-2 col-form-label" placeholder="select">Unsubmitted Returns
+              (UP)</label>
+            <div class="col-sm-4">
+              <select class="custom-select" id="inputGroupSelect01">
+                <option value="1">YES</option>
+                <option value="2">NO</option>
+              </select>
+            </div>
+
+
+
+          </div>
+          <p align="left">(UP-Unpaid)</p>
+          <button type="submit" class="btn btn-primary b-align">Submit</button>
+
+
+      </div>
+
+
+      </form>
+    </div>
+
+
+  </div>
+  </div>
+
+  <script>
+    includeHTML();
+  </script>
+
 </body>
+
 </html>

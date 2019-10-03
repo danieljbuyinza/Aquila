@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tax Master: Tax Consultant</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="custom.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                    Search
+                </button>
+            </form>
+        </div>
+    </nav>
+
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <ul class="nav flex-column" id="client-list">
+                    <li class="nav-item">
+                        <h2>Client list</h2>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Kato John</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Buyinza Daniel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Mafabi Yashmin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Nabangi Phyllis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Kalibwa Daniel</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-9">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <h2>Welcome, Samson</h2>
+                        </div>
+                        <div class="col-sm">
+                            <form class="form-inline my-2 my-lg-0">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Search Name or TIN"
+                                    aria-label="Search" />
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                                    Add
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-7" id="client-list">
+                            <br>
+                            <p>Kato John's tax liability</p>
+
+                            <form>
+                                <div class="form-group form-row">
+                                    <label class="col-sm-3">Date</label>
+                                    <div class="col"><input type="number" class="form-control" placeholder="Beginning"></div>
+                                    <div class="col"><input type="number" class="form-control" placeholder="Ending"></div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="amount" class="col-sm-3">Amount</label>
+                                    <input type="number" class="form-control col-sm-8" id="amount" placeholder="Enter amount">
+                                </div>
+                                <div class="form-group row">
+                                    <label for="period" class="col-sm-3">Period</label>
+                                    <input type="number" class="form-control col-sm-8" id="period" placeholder="Enter the number of months">
+                                </div>
+                                <div class="form-group row">
+                                    <label for="interest" class="col-sm-3">Interest</label>
+                                    <input type="number" class="form-control col-sm-8" id="interest" placeholder="Enter the interest rate (%)">
+                                </div>
+                                <div class="form-group row">
+                                    <label for="penalty" class="col-sm-3">Penalty</label>
+                                    <input type="number" class="form-control col-sm-8" id="penalty">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+
+                                <br><br>
+
+                                <div class="form-group row">
+                                    <label for="tax-liability" class="col-sm-4">TAX LIABILITY</label>
+                                    <input type="number" class="form-control col-sm-7" id="tax-liability">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+</body>
+
+</html>

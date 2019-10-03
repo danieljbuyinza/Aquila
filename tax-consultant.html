@@ -7,50 +7,42 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Tax Master: Tax Consultant</title>
     <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="fontawesome/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="custom.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-                    Search
-                </button>
-            </form>
-        </div>
-    </nav>
+    <div w3-include-html="./includes/navbar.html"></div>
+    <script>
+      function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /* Loop through a collection of all HTML elements: */
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+          elmnt = z[i];
+          /*search for elements with a certain atrribute:*/
+          file = elmnt.getAttribute("w3-include-html");
+          if (file) {
+            /* Make an HTTP request using the attribute value as the file name: */
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+              if (this.readyState == 4) {
+                if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                /* Remove the attribute, and call this function once more: */
+                elmnt.removeAttribute("w3-include-html");
+                includeHTML();
+              }
+            }
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            /* Exit the function: */
+            return;
+          }
+        }
+      }
+    </script>
 
     <br>
 
@@ -100,22 +92,28 @@
                             <p>Kato John's tax liability</p>
 
                             <form>
-                                <div class="form-group form-row">
-                                    <label class="col-sm-3">Date</label>
-                                    <div class="col"><input type="number" class="form-control" placeholder="Beginning"></div>
-                                    <div class="col"><input type="number" class="form-control" placeholder="Ending"></div>
+                                <div class="form-group row">
+                                    <label for="beginning-date" class="col-sm-3">From</label>
+                                    <input type="date" class="form-control col-sm-8" id="amount">
+                                </div>
+                                <div class="form-group row">
+                                    <label for="beginning-date" class="col-sm-3">To</label>
+                                    <input type="date" class="form-control col-sm-8" id="amount">
                                 </div>
                                 <div class="form-group row">
                                     <label for="amount" class="col-sm-3">Amount</label>
-                                    <input type="number" class="form-control col-sm-8" id="amount" placeholder="Enter amount">
+                                    <input type="number" class="form-control col-sm-8" id="amount"
+                                        placeholder="Enter amount">
                                 </div>
                                 <div class="form-group row">
                                     <label for="period" class="col-sm-3">Period</label>
-                                    <input type="number" class="form-control col-sm-8" id="period" placeholder="Enter the number of months">
+                                    <input type="number" class="form-control col-sm-8" id="period"
+                                        placeholder="Enter the number of months">
                                 </div>
                                 <div class="form-group row">
                                     <label for="interest" class="col-sm-3">Interest</label>
-                                    <input type="number" class="form-control col-sm-8" id="interest" placeholder="Enter the interest rate (%)">
+                                    <input type="number" class="form-control col-sm-8" id="interest"
+                                        placeholder="Enter the interest rate (%)">
                                 </div>
                                 <div class="form-group row">
                                     <label for="penalty" class="col-sm-3">Penalty</label>
@@ -138,6 +136,11 @@
     </div>
 
     <br>
+
+    <script>
+        includeHTML();
+    </script>
+
 </body>
 
 </html>

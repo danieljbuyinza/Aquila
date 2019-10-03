@@ -1,11 +1,11 @@
 * {
-    font-family: 'Quicksand', sans-serif !important;
+    font-family: 'Quicksand', sans-serif;
 }
 
 #client-list {
     background-color: #f8f9fa;
     border-radius: 10px;
-    padding: 10px;
+    padding: 0px 0px 15px 15px;
 }
 
 h2 {

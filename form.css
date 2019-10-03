@@ -1,0 +1,23 @@
+.form{
+    padding: 40px;
+    align-self: center;
+}
+
+#form {
+    text-align: center;
+
+}
+ .jumbotron{
+    /* display:none; */
+    align-content: center;
+    background-color:  lightblue; 
+    
+    width: 50%;
+    padding: 10% 5%;
+    margin: 10% 0% 5% 20%;
+    
+    
+}
+#buta{
+    width: 500px;
+} 

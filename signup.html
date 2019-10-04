@@ -5,76 +5,107 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>sign up page</title>
+  <title>Tax Master: Sign up</title>
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="form.css">
 </head>
 
 <body>
-  <div class="jumbotron" >
+  <div w3-include-html="./includes/navbar.html"></div>
+  <script>
+    function includeHTML() {
+      var z, i, elmnt, file, xhttp;
+      /* Loop through a collection of all HTML elements: */
+      z = document.getElementsByTagName("*");
+      for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        /*search for elements with a certain atrribute:*/
+        file = elmnt.getAttribute("w3-include-html");
+        if (file) {
+          /* Make an HTTP request using the attribute value as the file name: */
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4) {
+              if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+              if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+              /* Remove the attribute, and call this function once more: */
+              elmnt.removeAttribute("w3-include-html");
+              includeHTML();
+            }
+          }
+          xhttp.open("GET", file, true);
+          xhttp.send();
+          /* Exit the function: */
+          return;
+        }
+      }
+    }
+  </script>
+  <div class="jumbotron">
     <form>
-        <div class="form-group row">
-          <label for="staticEmail" class="col-sm-5 col-form-label">First Name</label>
-          <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputPassword" placeholder="First name">
-            </div>
+      <div class="form-group row">
+        <label for="staticEmail" class="col-sm-5 col-form-label">First Name</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" id="inputPassword" placeholder="First name">
+        </div>
 
+      </div>
+      <div class="form-group row">
+        <label for="inputPassword" class="col-sm-5 col-form-label">Last Name</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" id="inputPassword" placeholder="Last Name ">
         </div>
-        <div class="form-group row">
-          <label for="inputPassword" class="col-sm-5 col-form-label">Last Name</label>
-          <div class="col-sm-5">
-            <input type="text" class="form-control" id="inputPassword" placeholder="Last Name ">
-          </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputPassword" class="col-sm-5 col-form-label">Email Adress</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" id="inputPassword" placeholder="Email Adress">
         </div>
-        <div class="form-group row">
-            <label for="inputPassword" class="col-sm-5 col-form-label">Email Adress</label>
-            <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputPassword" placeholder="Email Adress">
-            </div>
-          </div>
-          <div class="form-group row">
-              <label for="inputPassword" class="col-sm-5 col-form-label">Company Name</label>
-              <div class="col-sm-5">
-                <input type="text" class="form-control" id="inputPassword" placeholder="Company Name">
-              </div>
-            </div>
-            <div class="form-group row">
-                <label for="inputPassword" class="col-sm-5 col-form-label">TIN</label>
-                <div class="col-sm-5">
-                  <input type="text" class="form-control" id="inputPassword" placeholder="TIN">
-                </div>
-              </div>
-              <div class="form-group row">
-                  <label for="inputPassword" class="col-sm-5 col-form-label">Password</label>
-                  <div class="col-sm-5">
-                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-                  </div>
-                </div>
-                <div class="form-group row">
-                    <label for="inputPassword" class="col-sm-5 col-form-label">Confirm password</label>
-                    <div class="col-sm-5">
-                      <input type="password" class="form-control" id="inputPassword" placeholder="Confirm Password">
-                    </div>
-                  </div>
-                  <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
-                      <label class="custom-control-label" for="customRadioInline1">Consultant</label>
-                    </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                      <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
-                      <label class="custom-control-label" for="customRadioInline2">Tax payer</label>
-                    </div>
-                    <hr>
-                  <div class="" id="buta">
-                      <button type="submit" class="btn btn-primary btn-block btn-lg">Register</button>
-                    </div>
-                    
-              
-      </form>
-    </div>
-                  
-  
- 
+      </div>
+      <div class="form-group row">
+        <label for="inputPassword" class="col-sm-5 col-form-label">Company Name</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" id="inputPassword" placeholder="Company Name">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputPassword" class="col-sm-5 col-form-label">TIN</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" id="inputPassword" placeholder="TIN">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputPassword" class="col-sm-5 col-form-label">Password</label>
+        <div class="col-sm-5">
+          <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputPassword" class="col-sm-5 col-form-label">Confirm password</label>
+        <div class="col-sm-5">
+          <input type="password" class="form-control" id="inputPassword" placeholder="Confirm Password">
+        </div>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+        <label class="custom-control-label" for="customRadioInline1">Consultant</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+        <label class="custom-control-label" for="customRadioInline2">Tax payer</label>
+      </div>
+      <hr>
+      <div class="" id="buta">
+        <button type="submit" class="btn btn-primary btn-block btn-lg">Register</button>
+      </div>
+
+
+    </form>
+  </div>
+
+  <script>
+    includeHTML();
+  </script>
 
 </body>
 

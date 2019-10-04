@@ -9,3 +9,7 @@
 
  height: 800px;
 }
+.gap{
+    width: 95px;
+    display: inline-block;
+}
